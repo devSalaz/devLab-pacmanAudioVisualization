@@ -1,0 +1,88 @@
+header {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoTittle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  user-select: none;
+  text-decoration: none;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  pointer-events: all;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-contact {
+  background-color: #ff0071;
+  color: #ffffff;
+}
+
+.contact-bg,
+.hide-bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 30;
+  transform: translateX(100%);
+  border-radius: 30px;
+  transition: transform 200ms ease-out;
+}
+
+.contact-bg {
+  color: #ffffff;
+  background-color: #ff0071;
+}
+
+.hide-bg {
+  color: #5319d1;
+  background-color: #ffffff;
+}
+
+.btn-contact:hover .contact-bg {
+  transform: translateX(0%);
+}
+
+.btn-hide:hover .hide-bg {
+  transform: translateX(0%);
+}
+
+.btn-hide {
+  background-color: #ffffff;
+  color: #5319d1;
+}
+
+@media (max-width: 600px) {
+  header {
+    display: none;
+  }
+}

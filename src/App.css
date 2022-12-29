@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Merriweather:wght@400;700;900&family=Oswald:wght@400;500;600;700&family=Pacifico&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+html,
+body,
+#root,
+.App {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #5319d1;
+  padding: 10px;
+}
+
+button {
+  position: relative;
+  z-index: 20;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  pointer-events: all;
+  user-select: none;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  transform: scale(1);
+  transition: transform 200ms ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.animatedLetter {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  cursor: pointer;
+  transform-origin: bottom;
+  display: block;
+}
+
+.animatedLetter:hover {
+  -webkit-animation: letterAnimation 1000;
+  animation: letterAnimation 1000ms;
+}
+
+/* Letter Animation */
+@keyframes letterAnimation {
+  0% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+.loader-container {
+  transform: translate(0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 990;
+  background-color: #5319d1;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: all;
+  transition: opacity 500ms ease-out 650ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container h2 {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 60px;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.loader-container.hide {
+  opacity: 0;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Importing Styles */
+@import url("../src/Assets/Styles/navbarStyle.css");
+@import url("../src/Assets/Styles/mainStyle.css");
+@import url("../src/Assets/Styles/canvasStyle.css");

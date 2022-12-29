@@ -1,0 +1,225 @@
+main {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.main-content {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 1140px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 350ms ease;
+}
+
+.main-content.hide {
+  opacity: 0;
+}
+
+.content-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 0px;
+}
+
+.content-left h2 {
+  display: flex;
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 700;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.content-left h4 {
+  color: #f5f5f5;
+  font-size: 20px;
+  font-weight: 500;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  margin-bottom: 48px;
+}
+
+.btn-play {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  background: -webkit-linear-gradient(to right, #ff0071, #ff764a);
+  background: linear-gradient(to right, #ff0071, #ff764a);
+  overflow: hidden;
+}
+
+.sound-wave-container {
+  background: -webkit-linear-gradient(to right, #ff0071, #ff764a);
+  background: linear-gradient(to right, #ff0071, #ff764a);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transform: translateX(0%);
+  transition: transform 200ms ease-out;
+}
+
+.sound-wave-container.hide {
+  transform: translateX(100%);
+}
+
+.sound-wave-container span {
+  height: 24px;
+  width: 4px;
+  background-color: #ffffff;
+  transform: scale(1);
+}
+
+.btn-icon {
+  transform: translateX(4px);
+}
+
+.content-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: #ffffff;
+}
+
+.drag-container {
+  position: relative;
+  border: dashed 4px #ffffff;
+  border-radius: 2px;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  transition: background-color 300ms ease-out;
+  pointer-events: all;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+.main-content.hide .drag-container {
+  pointer-events: none;
+}
+
+.drag-loading-content {
+  pointer-events: none;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 100ms ease-out;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.15));
+}
+
+.drag-loading-content.active {
+  opacity: 1;
+}
+
+.drag-loading-content h4 {
+  color: #252525;
+  font-size: 22px;
+}
+
+.drag-loading-content .spinner {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: solid 2px;
+  border-color: #252525 transparent #252525 transparent;
+  animation: spin 1250ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.drag-container.active {
+  background-color: rgba(173, 234, 247, 0.4);
+}
+
+.drag-container h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  user-select: none;
+}
+
+.drag-container p {
+  color: #ffffff;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+.btn-files {
+  background-color: #ffbc42;
+  color: #252525;
+}
+
+.files-contact {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 30;
+  transform: translateX(100%);
+  border-radius: 30px;
+  transition: transform 200ms ease-out;
+  color: #252525;
+  background-color: #ffbc42;
+}
+
+.btn-files:hover .files-contact {
+  transform: translateX(0%);
+}
+
+@media (max-width: 600px) {
+  .content-right,
+  .content-left h2,
+  .content-left h4 {
+    display: none;
+  }
+
+  .content-left {
+    padding: 0px 0px;
+  }
+}
