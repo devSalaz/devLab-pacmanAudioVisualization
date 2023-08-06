@@ -189,6 +189,7 @@ main {
 .btn-files {
   background-color: #ffbc42;
   color: #252525;
+  overflow: hidden;
 }
 
 .files-contact {

@@ -40,6 +40,7 @@ nav {
 .btn-contact {
   background-color: #ff0071;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .contact-bg,
@@ -79,6 +80,7 @@ nav {
 .btn-hide {
   background-color: #ffffff;
   color: #5319d1;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {

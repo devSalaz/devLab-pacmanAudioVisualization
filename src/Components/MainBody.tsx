@@ -80,11 +80,11 @@ const MainBody = ({ isVisible }: MainBodyProps) => {
     <main>
       <div className={`main-content ${isVisible ? "" : "hide"}`}>
         <div className="content-left">
-          <h2>The new way to visualize audio in the web browsers</h2>
+          <h2>A new way to visualize audio in the web browsers</h2>
           <h4>
             Insert your custom mp3 audio file and try how the elements in the
-            browser "React" to it. This website is made with ThreeJS and React,
-            React Three Cannon was used for the pysics.
+            browser "React" to it. This website is made with ThreeJS and React.
+            React Three Cannon was used for the physics.
           </h4>
           <PlayButton />
         </div>
